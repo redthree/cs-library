@@ -1,0 +1,43 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/colors.scss';
+
+.cs-component-info-container{
+  margin-bottom: 70px;
+
+  .cs-component-info-props{
+    .cs-component-prop-description{
+      display: block;
+      font-size: $font-size-very-small;
+      margin: 10px 0px 20px 0px;
+    }
+
+    .cs-component-prop-info{
+      .cs-component-prop-type{
+        display: block;
+        font-size: $font-size-very-small;
+      }
+
+      .cs-component-prop-default{
+        display: block;
+        font-size: $font-size-very-small;
+        color: $dark-grey;
+      }
+
+      .cs-component-prop-required{
+        display: block;
+        font-size: $font-size-very-small;
+      }
+
+      .cs-component-prop-values{
+        font-size: $font-size-very-small;
+        color: $dark-grey;
+        display: block;
+      }
+    }
+  }
+
+  .cs-component-info-code-example{
+    margin-bottom: 50px;
+    display: block;
+  }
+}

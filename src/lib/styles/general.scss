@@ -1,0 +1,133 @@
+@import "./reset.scss";
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./variables.scss";
+@import "./modal.scss";
+@import "./toaster.scss";
+@import "./utility.scss";
+
+html {
+  scroll-behavior: smooth;
+
+  body {
+    background-color: $very-light-grey;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+
+    ::selection {
+      background-color: $cs-red;
+      color: white;
+    }
+
+    * {
+      font-family: $font-family;
+      font-size: $font-size-default;
+      font-weight: $font-weight-regular;
+      line-height: $font-size-default * $lh-factor;
+      color: $black;
+      text-rendering: optimizeLegibility;
+
+      @media screen and (max-width: 1200px) {
+        line-height: initial;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          line-height: initial !important;
+        }
+      }
+    }
+
+    h1,
+    h1 > * {
+      font-size: $font-size-extra-large;
+      line-height: $font-size-extra-large * $lh-factor;
+      font-weight: $font-weight-bold;
+      color: $dark-grey;
+    }
+
+    h2,
+    h2 > * {
+      font-size: $font-size-large;
+      line-height: $font-size-large * $lh-factor;
+      font-weight: $font-weight-medium;
+      color: $dark-grey;
+      margin-bottom: 20px;
+    }
+
+    h3,
+    h3 > * {
+      font-size: $font-size-medium;
+      line-height: $font-size-medium * $lh-factor;
+      font-weight: $font-weight-medium;
+      color: $dark-grey;
+    }
+
+    h4,
+    h4 > * {
+      font-size: $font-size-small;
+      line-height: $font-size-small * $lh-factor;
+      font-weight: $font-weight-medium;
+      color: $dark-grey;
+    }
+
+    h5,
+    h5 > * {
+      font-size: $font-size-default;
+      line-height: $font-size-default * $lh-factor;
+      font-weight: $font-weight-medium;
+      color: $dark-grey;
+      margin-bottom: 5px;
+    }
+
+    h6,
+    h6 > * {
+      font-size: $font-size-very-small;
+      line-height: $font-size-default * $lh-factor;
+      font-weight: $font-weight-regular;
+      color: $grey;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-weight: $font-weight-bold;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        content: ".";
+        color: transparent;
+        width: 0%;
+        height: 2px;
+        background-color: $black;
+        position: absolute;
+        top: calc(100% - 4px);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        transition: width ease-out 150ms;
+      }
+
+      &:hover::after {
+        width: 102%;
+      }
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-bottom: 15px;
+      display: block;
+
+      li {
+        font-size: $font-size-default;
+        margin: 10px 0px;
+      }
+    }
+  }
+}

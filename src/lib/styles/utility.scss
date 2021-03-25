@@ -1,0 +1,75 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./variables.scss";
+
+.separate {
+  margin: 20px 0px;
+}
+
+.no-bg {
+  background-color: transparent !important;
+}
+
+.bold-text {
+  font-weight: $font-weight-bold !important;
+}
+
+.font-size-extra-large {
+  font-size: $font-size-extra-large !important;
+}
+.font-size-large {
+  font-size: $font-size-large !important;
+}
+.font-size-medium {
+  font-size: $font-size-medium !important;
+}
+.font-size-small {
+  font-size: $font-size-small !important;
+}
+.font-size-default {
+  font-size: $font-size-default !important;
+}
+.font-size-very-small {
+  font-size: $font-size-very-small !important;
+}
+
+.elevation {
+  box-shadow: $default-box-shadow;
+}
+
+.highlight {
+  background-color: white;
+  padding: 0px 5px;
+  border-radius: 6px;
+
+  &.important {
+    color: $red;
+  }
+
+  &.warning {
+    color: $orange;
+  }
+
+  &.ok {
+    color: $green;
+  }
+
+  &.no-bg {
+    padding: 0px;
+  }
+}
+
+span.pre {
+  display: inline;
+  font-family: monospace;
+  font-size: $font-size-default;
+  font-weight: $font-weight-regular;
+  color: $dark-grey;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background-color: white;
+
+  &.no-bg {
+    padding: 0px;
+  }
+}

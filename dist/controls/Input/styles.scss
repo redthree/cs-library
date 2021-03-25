@@ -1,0 +1,253 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/variables.scss";
+
+.cs-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  &.cs-input-container-radio-button {
+    margin-top: 10px;
+  }
+
+  label {
+    .cs-input-name {
+      display: block;
+      font-weight: $font-weight-bold;
+      color: $black;
+    }
+
+    .cs-input-required {
+      font-size: $font-size-very-small;
+      color: $red;
+    }
+  }
+
+  .cs-input {
+    position: relative;
+    transition: $default-transition-all;
+
+    &.disabled {
+      opacity: 0.4;
+    }
+
+    input {
+      padding: 3px 8px;
+      width: calc(100% - 20px);
+      border: 2px solid $light-grey;
+      outline: none;
+      color: $black;
+      height: 32px;
+      line-height: 32px;
+      margin: 6px 0;
+      border-radius: 8px;
+      box-shadow: none;
+      font-size: $font-size-default;
+      transition: $default-transition-all;
+
+      &:focus {
+        border-color: $grey;
+      }
+    }
+
+    select {
+      display: block;
+      padding: 3px 8px;
+      width: calc(100%);
+      border: 2px solid $light-grey;
+      outline: none;
+      color: $black;
+      height: 42px;
+      margin: 6px 0;
+      border-radius: 8px;
+      box-shadow: none;
+      font-size: $font-size-default;
+      transition: $default-transition-all;
+      appearance: none;
+      cursor: pointer;
+      background-color: white;
+    }
+
+    textarea {
+      padding: 3px 8px;
+      width: calc(100% - 20px);
+      border: 2px solid $light-grey;
+      outline: none;
+      color: $black;
+      height: 132px;
+      line-height: 32px;
+      margin: 6px 0;
+      border-radius: 8px;
+      box-shadow: none;
+      font-size: $font-size-default;
+      transition: $default-transition-all;
+      resize: none;
+
+      &:focus {
+        border-color: $grey;
+      }
+    }
+
+    &.cs-input-type-file {
+      display: flex;
+      align-items: center;
+      line-height: 40px;
+
+      input[type="file"] {
+        border: none;
+        padding: 0;
+        line-height: normal;
+      }
+    }
+
+    .cs-input-selector {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translateX(calc(-50% - 3px)) translateY(calc(-50% + 3px));
+    }
+
+    .react-datepicker-wrapper {
+      display: block;
+    }
+
+    .react-datepicker__day--selected {
+      background-color: $cs-red;
+    }
+
+    &.cs-input-type-select + .cs-input-error {
+      top: 100%;
+    }
+
+    &.cs-input-type-textarea + .cs-input-error {
+      top: calc(100% - 12px);
+    }
+
+    &.cs-input-type-radio {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      margin-left: 4px;
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        z-index: 3;
+
+        &:checked ~ .cs-radio-button-checkmark,
+        &:checked:hover ~ .cs-radio-button-checkmark {
+          background-color: $cs-red;
+        }
+      }
+
+      .cs-radio-button-checkmark {
+        position: relative;
+        height: 14px;
+        width: 14px;
+        top: 1px;
+        border-radius: 50%;
+        background-color: white;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          color: transparent;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: white;
+          display: block;
+          z-index: -1;
+          border: 2px solid $light-grey;
+        }
+      }
+
+      .cs-radio-button-text {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-very-small;
+        margin-left: 10px;
+      }
+    }
+
+    &.cs-input-type-checkbox {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      margin-left: 5px;
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+
+      input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        z-index: 3;
+
+        &:checked ~ .cs-checkbox-checkmark,
+        &:checked:hover ~ .cs-checkbox-checkmark {
+          background-color: $cs-red;
+        }
+      }
+
+      .cs-checkbox-checkmark {
+        position: relative;
+        height: 14px;
+        width: 14px;
+        top: 1px;
+        background-color: white;
+        display: inline-block;
+        border-radius: 1px;
+
+        &::after {
+          content: "";
+          color: transparent;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          height: 20px;
+          width: 20px;
+          background-color: transparent;
+          display: block;
+          z-index: 1;
+          border: 2px solid $light-grey;
+          border-radius: 3px;
+        }
+      }
+
+      .cs-checkbox-text {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-very-small;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .cs-input-error {
+    position: absolute;
+    top: calc(100% - 5px);
+    left: 0px;
+    font-size: $font-size-very-small;
+    color: $red;
+  }
+}
+
+p.cs-input-group-name {
+  font-weight: $font-weight-bold;
+  color: $black;
+  margin-bottom: 5px;
+}

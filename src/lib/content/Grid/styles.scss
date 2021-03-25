@@ -1,0 +1,142 @@
+@import '../../styles/variables.scss';
+@import '../../styles/colors.scss';
+
+.cs-grid-container{
+  border-radius: 15px;
+  width: 100%;
+  overflow: hidden;
+
+  .cs-grid-title{
+    padding: 15px 0px 15px 30px;
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: 0px;
+  }
+
+  .cs-grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+
+    &.columns-auto{
+      justify-content: space-evenly;
+    }
+
+    & > *{
+      border-right: 1px solid $very-light-grey;
+      border-bottom: 1px solid $very-light-grey;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    &.columns-auto > *{
+      min-width: 20%;
+      flex-grow: 1;
+    }
+
+    &.columns-1 > *{
+      width: 100%;
+      border-right: none;
+    }
+
+    &.columns-2 > *{
+      width: 50%;
+
+      &:nth-child(2n){
+        border-right: none;
+      }
+    }
+
+    &.columns-3 > *{
+      width: 33.3%;
+
+      &:nth-child(3n){
+        border-right: none;
+      }
+    }
+
+    &.columns-4 > *{
+      width: 25%;
+
+      &:nth-child(4n){
+        border-right: none;
+      }
+    }
+
+    &.columns-5 > *{
+      width: 20%;
+
+      &:nth-child(5n){
+        border-right: none;
+      }
+    }
+
+    &.columns-6 > *{
+      width: 16.6%;
+
+      &:nth-child(6n){
+        border-right: none;
+      }
+    }
+
+    &.columns-7 > *{
+      width: 14.2%;
+
+      &:nth-child(7n){
+        border-right: none;
+      }
+    }
+
+    &.columns-8 > *{
+      width: 12.5%;
+
+      &:nth-child(8n){
+        border-right: none;
+      }
+    }
+
+    @media screen and (max-width: 1200px){
+      &.columns-2{
+        & > *{
+          width: 100%;
+        }
+      }
+
+      &.columns-3{
+        & > *{
+          width: 50%;
+        }
+      }
+
+      &.columns-4, &.columns-5, &.columns-6, &.columns-7, &.columns-8{
+        & > *{
+          width: 33.3%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px){
+      &.columns-2, &.columns-3{
+        & > *{
+          width: 100%;
+        }
+      }
+
+      &.columns-4, &.columns-5, &.columns-6, &.columns-7, &.columns-8{
+        & > *{
+          width: 50%;
+        }
+      }
+    }
+
+
+    @media screen and (max-width: 450px){
+      &.columns-2, &.columns-3, &.columns-4, &.columns-5, &.columns-6, &.columns-7, &.columns-8{
+        & > *{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

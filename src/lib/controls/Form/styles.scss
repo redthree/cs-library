@@ -1,0 +1,25 @@
+.cs-form-container {
+  width: 100%;
+  &.center-fields {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cs-form {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+
+    & > *:not(.cs-button) {
+      width: 100%;
+    }
+
+    .cs-form-error {
+      margin-top: 20px;
+    }
+
+    .cs-button.primary {
+      margin-top: 30px;
+    }
+  }
+}

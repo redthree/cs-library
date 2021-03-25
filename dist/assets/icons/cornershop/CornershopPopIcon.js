@@ -1,0 +1,69 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var CornershopPopIcon =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(CornershopPopIcon, _PureComponent);
+
+  function CornershopPopIcon() {
+    _classCallCheck(this, CornershopPopIcon);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CornershopPopIcon).apply(this, arguments));
+  }
+
+  _createClass(CornershopPopIcon, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("svg", {
+        width: "100",
+        height: "100",
+        viewBox: "0 0 100 100",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, _react.default.createElement("rect", {
+        width: "100",
+        height: "100",
+        fill: "#FF404C"
+      }), _react.default.createElement("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M78.6035 54.012C77.2127 55.3649 75.5513 56.0211 73.6581 56.0211H68.9837V64.7126H66.0088V41.8355H73.6581C75.5513 41.8355 77.2127 42.4918 78.6035 43.8447C79.9943 45.1975 80.6897 46.8783 80.6897 48.9283C80.6897 50.937 79.9943 52.6591 78.6035 54.012ZM73.5424 44.7467H68.9837V53.1099H73.5424C75.8604 53.1099 77.7147 51.3883 77.7147 48.9283C77.7147 46.4683 75.8604 44.7467 73.5424 44.7467ZM50.0666 64.7046C46.9298 64.7046 44.2527 63.5845 42.0724 61.3838C39.8921 59.1831 38.8212 56.3827 38.8212 53.0619C38.8212 49.7012 39.8921 46.9003 42.0724 44.7001C44.2527 42.4994 46.9298 41.3793 50.0666 41.3793C53.203 41.3793 55.8421 42.4994 58.0223 44.7001C60.2022 46.9003 61.2736 49.7012 61.2736 53.0619C61.2736 56.3827 60.1642 59.1831 57.9839 61.3838C55.8036 63.5845 53.1646 64.7046 50.0666 64.7046ZM55.9211 46.9371C54.3956 45.3415 52.4506 44.5242 50.086 44.5242C47.6834 44.5242 45.7384 45.3415 44.175 46.9371C42.6111 48.5331 41.8484 50.5956 41.8484 53.048C41.8484 55.4999 42.6111 57.5238 44.175 59.1584C45.7384 60.754 47.7214 61.5713 50.086 61.5713C52.4506 61.5713 54.3956 60.754 55.9211 59.1584C57.4849 57.5238 58.2477 55.4999 58.2477 53.048C58.2477 50.5956 57.4849 48.5331 55.9211 46.9371ZM50.0441 58.4277C47.1836 58.4277 44.8643 56.0175 44.8643 53.0448C44.8643 50.0722 47.1836 47.662 50.0441 47.662C52.9047 47.662 55.224 50.0722 55.224 53.0448C55.224 56.0175 52.9047 58.4277 50.0441 58.4277ZM28.5643 56.0211H23.7518V64.7126H20.6897V41.8355H28.5643C30.5128 41.8355 32.223 42.4918 33.6548 43.8447C35.0866 45.1975 35.8022 46.8783 35.8022 48.9283C35.8022 50.937 35.0866 52.6591 33.6548 54.012C32.223 55.3649 30.5128 56.0211 28.5643 56.0211ZM28.4447 44.7467H23.7518V53.1099H28.4447C30.8309 53.1099 32.7401 51.3883 32.7401 48.9283C32.7401 46.4683 30.8309 44.7467 28.4447 44.7467Z",
+        fill: "white"
+      }));
+    }
+  }]);
+
+  return CornershopPopIcon;
+}(_react.PureComponent);
+
+var _default = CornershopPopIcon;
+exports.default = _default;

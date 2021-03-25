@@ -1,0 +1,99 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/variables.scss";
+
+.cs-section {
+  background-color: white;
+  margin: 0px 0px 50px 0px;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: $default-box-shadow;
+  height: fit-content;
+  min-height: 45px;
+
+  .cs-section-info {
+    border-bottom: 1px solid $light-grey;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .cs-section-title {
+      display: block;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+      line-height: $font-size-large * $lh-factor;
+      color: $dark-grey;
+    }
+
+    .cs-section-description {
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      color: $grey;
+    }
+  }
+
+  .cs-section-content {
+    opacity: 1;
+  }
+
+  &.collapsable {
+    position: relative;
+    transition: box-shadow 150ms ease-out, transform 150ms ease-out;
+
+    .cs-section-info {
+      cursor: pointer;
+
+      &:hover {
+        .cs-section-title {
+          color: $dark-grey;
+        }
+      }
+    }
+
+    .cs-section-title {
+      transition: $default-transition-all;
+      user-select: none;
+    }
+
+    .collapse-toggle-button {
+      position: absolute;
+      right: 20px;
+      transform: rotate(180deg);
+      top: 20px;
+      transition: $default-transition-all;
+    }
+  }
+
+  &.collapsed {
+    overflow: hidden;
+    height: 45px;
+
+    &:hover {
+      box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .cs-section-info {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      border-bottom: none;
+
+      .cs-section-description {
+        opacity: 0;
+      }
+    }
+
+    .cs-section-content {
+      opacity: 0;
+    }
+
+    .collapse-toggle-button {
+      transform: rotate(0deg);
+      top: 27px;
+    }
+  }
+
+  *:last-child {
+    margin-bottom: 0px;
+  }
+}

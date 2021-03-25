@@ -1,0 +1,60 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/prism.scss';
+@import '../../styles/variables.scss';
+
+.cs-code-container{
+  position: relative;
+
+  .cs-code{
+    position: relative;
+    z-index: 1;
+    background-color: $dark-grey;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+
+    pre{
+      font-size: $font-size-default;
+      font-weight: $font-weight-regular;
+      color: $light-grey;
+      tab-size: 2;
+      white-space: pre-wrap;
+      font-family: monospace;
+
+      span{
+        font-family: monospace;
+        font-size: $font-size-default;
+        font-weight: $font-weight-regular;
+      }
+    }
+  }
+
+  .cs-code-copy-button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 2;
+    transition: $default-transition-all;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+
+    *{
+      transition: $default-transition-all;
+      fill: $grey;
+    }
+
+    &:hover{
+      cursor: pointer;
+      background-color: white;
+
+      *{
+        fill: $dark-grey;
+      }
+    }
+  }
+}

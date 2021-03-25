@@ -1,0 +1,16 @@
+@import "../../styles/general.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.cs-title {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+
+  span.cs-title-subtitle {
+    font-size: $font-size-small;
+    line-height: $font-size-small * $lh-factor;
+    font-weight: $font-weight-medium;
+    color: $dark-grey;
+  }
+}

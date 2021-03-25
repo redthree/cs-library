@@ -1,0 +1,169 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/variables.scss";
+
+.cs-button {
+  height: 38px;
+  padding: 0px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid $light-grey;
+  transition: $default-transition-all;
+  user-select: none;
+  display: inline-block;
+  min-width: 100px;
+  position: relative;
+
+  &.slim {
+    padding: 0px 10px;
+    min-width: auto;
+    height: auto !important;
+    border-radius: 4px;
+    border: 1px solid $light-grey;
+
+    &.no-background {
+      background-color: transparent;
+    }
+
+    &:not(.primary) {
+      .cs-button-text {
+        color: $dark-grey;
+        transition: color 150ms ease-out;
+        font-weight: $font-weight-regular !important;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+      &:not(.primary) {
+        .cs-button-text {
+          color: $black;
+        }
+      }
+    }
+
+    .cs-button-text {
+      font-size: $font-size-very-small !important;
+      line-height: $font-size-very-small !important;
+      font-weight: $font-weight-medium;
+      height: auto !important;
+    }
+  }
+
+  span {
+    color: $dark-grey;
+    font-weight: $font-weight-bold;
+    line-height: 34px;
+    display: block;
+  }
+
+  &:hover {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.primary {
+    background: $cs-red;
+    border: 1px solid darken($color: $cs-red, $amount: 15);
+
+    span {
+      color: white;
+    }
+  }
+
+  &.disabled {
+    background-color: $very-light-grey;
+    border-color: $very-light-grey !important;
+
+    span {
+      color: lighten($grey, 10);
+    }
+
+    &:hover {
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    &.slim {
+      .cs-button-text {
+        color: $grey !important;
+      }
+    }
+  }
+
+  &.back {
+    position: relative;
+    border-left: none;
+    margin-left: 20px;
+    border-radius: 0px 6px 6px 0px;
+    background-color: darken($color: white, $amount: 3);
+    padding-left: 15px;
+
+    &:hover {
+      box-shadow: none;
+      transform: translateX(-5px);
+    }
+
+    &::before {
+      position: absolute;
+      content: ".";
+      color: transparent;
+      display: block;
+      transform: rotate(45deg);
+      width: 28px;
+      height: 29px;
+      border-radius: 5px 6px;
+      left: -14px;
+      top: 3px;
+      border-left: 1px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      border-right: none;
+      border-top: none;
+      background-color: inherit;
+      z-index: -1;
+    }
+
+    &.slim {
+      background-color: white;
+      margin-left: 15px;
+
+      &::before {
+        width: 18px;
+        height: 19px;
+        border-radius: 2px 3px;
+        top: 2px;
+        left: -10px;
+      }
+    }
+  }
+
+  .cs-button-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      margin: 0px 10px 0px 0px;
+      display: block;
+      transform: translateY(-2px);
+
+      &:last-child {
+        margin-right: 0px;
+        margin-left: 5px;
+      }
+    }
+
+    .cs-button-text {
+      height: 38px;
+      line-height: 36px;
+    }
+  }
+}

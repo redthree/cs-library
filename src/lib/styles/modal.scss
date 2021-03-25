@@ -1,0 +1,120 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+@keyframes overlayFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes modalContainerFadeIn {
+  0% {
+    transform: translateX(-50%) translateY(-35%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes modalContainerFadeOut {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-65%);
+    opacity: 0;
+  }
+}
+
+#cs-modal-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  font-family: font-family;
+  animation-name: overlayFadeIn;
+  animation-duration: 300ms;
+
+  &.exit {
+    animation-name: overlayFadeOut;
+    animation-duration: 300ms;
+
+    #cs-modal-container {
+      animation-name: modalContainerFadeOut;
+      animation-duration: 300ms;
+    }
+  }
+
+  #cs-modal-container {
+    max-width: 50%;
+    min-width: 400px;
+    padding: 30px 20px 20px 20px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    animation-name: modalContainerFadeIn;
+    animation-duration: 300ms;
+
+    p,
+    #cs-modal-buttons-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    p {
+      margin: 10px 0px;
+      font-size: $font-size-small;
+    }
+
+    #cs-modal-buttons-container .cs-modal-button {
+      display: inline-block;
+      height: 38px;
+      padding: 0px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: $default-transition-all;
+      background: $cs-red;
+      border: 1px solid darken($color: $cs-red, $amount: 15);
+      color: white;
+      font-weight: $font-weight-bold;
+      margin: 0px 10px;
+      min-width: 120px;
+
+      &:hover {
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        box-shadow: inset 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

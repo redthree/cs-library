@@ -1,0 +1,67 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/variables.scss";
+
+.cs-side-links-menu {
+  position: fixed;
+  top: 130px;
+  left: 50%;
+  transform: translateX(280px);
+  padding-right: 20px;
+  padding-left: 20px;
+  border-left: 5px solid $light-grey;
+  max-height: calc(100vh - 200px);
+  max-width: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .cs-side-link {
+    display: block;
+    margin: 15px 0px 0px 0px;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-very-small;
+    line-height: $font-size-very-small * 1.5;
+    color: $dark-grey;
+    transition: $default-transition-all;
+    width: 100%;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $cs-red;
+    }
+
+    &::after {
+      content: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &.level-2 {
+      margin: 0px 0px 5px 10px;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: color 300ms ease-out;
+
+  &.highlight-heading {
+    color: $cs-red;
+  }
+}

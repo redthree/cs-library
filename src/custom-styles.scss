@@ -1,0 +1,12 @@
+.github-link{
+  margin-top: 0px;
+  transform: translateY(2px);
+
+  svg{
+    width: 16px;
+  }
+
+  @media screen and (max-width: 1200px){
+    transform: translateY(0);
+  }
+}

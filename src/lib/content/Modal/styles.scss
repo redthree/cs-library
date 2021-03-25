@@ -1,0 +1,131 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+@keyframes overlayFadeIn{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut{
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes modalContainerFadeIn{
+  0%{
+    transform: translateX(-50%) translateY(-35%);
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes modalContainerFadeOut{
+  0%{
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(-50%) translateY(-65%);
+    opacity: 0;
+  }
+}
+
+.cs-modal-overall-container{
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .cs-modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    animation-name: overlayFadeIn;
+    animation-duration: 300ms;
+
+    &.exit{
+      animation-name: overlayFadeOut;
+      animation-duration: 300ms;
+
+      .cs-modal-container{
+        animation-name: modalContainerFadeOut;
+        animation-duration: 300ms;
+      }
+    }
+
+    .cs-modal-container{
+      max-width: 50vw;
+      min-width: 720px;
+      height: 70vh;
+      border-radius: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: #fff;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+      animation-name: modalContainerFadeIn;
+      animation-duration: 300ms;
+
+      .cs-modal-header{
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid $light-grey;
+        min-height: 70px;
+        padding: 12px;
+        box-sizing: border-box;
+
+        .cs-modal-header-left{
+          position: absolute;
+          top: 50%;
+          left: 12px;
+          transform: translateY(-50%);
+        }
+
+        .cs-modal-header-title{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          font-size: $font-size-small;
+          font-weight: $font-weight-bold;
+          line-height: $font-size-small;
+          color: $dark-grey;
+          margin: 0px;
+          padding: 0px;
+          text-align: center;
+        }
+
+        .cs-modal-header-right{
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+        }
+      }
+
+      .cs-modal-content{
+        width: 100%;
+        max-height: calc(100% - 70px);
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+    }
+  }
+}
